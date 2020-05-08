@@ -1,0 +1,63 @@
+/* --------------------------------------------------------------------------------
+		Components - Toggle: components/toggle.scss
+----------------------------------------------------------------------------------- */
+
+.toggle-container {
+
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+
+    & + .toggle-container {border-top:none;}
+
+    .toggle-handle {
+        position: relative;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        @include user_select();
+        font-weight:bold;
+        font-size:13px;
+        text-transform:uppercase;
+        padding:10px 0;
+
+        &:before {
+            @include fonticon($icon-plus);
+            position:absolute;
+            right:0;
+            top:50%;
+            height:30px;
+            line-height:30px;
+            margin:-15px 0 0;
+
+        }
+    }
+
+    .toggle-content {
+        display:none;
+        font-size:13px;
+        font-weight:300;
+        padding:5px 0 15px;
+        line-height:1.4;
+    }
+
+    //toggle states
+    &.active {
+        > .toggle-handle {&:before {content:$icon-minus;}}
+        > .toggle-content {display:block;}
+    }
+
+    &.opened {
+        > .toggle-handle {}
+        > .toggle-content {}
+    }
+
+    &.closed {
+        > .toggle-handle {}
+        > .toggle-content {}
+    }
+
+    &.disabled {
+        > .toggle-handle {&:before {display:none;} cursor:default;}
+        > .toggle-content {display:none;}
+    }
+
+}

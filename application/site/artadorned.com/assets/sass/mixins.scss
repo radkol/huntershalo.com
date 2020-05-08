@@ -1,0 +1,101 @@
+//--------------------------------------------------------------------------------
+//	Mixins: mixins.scss
+//--------------------------------------------------------------------------------
+
+@mixin font_size ($value: $font_size) {
+    font-size:              $value + px;
+    font-size:              ($value / 10) + rem;
+}
+
+
+@mixin height_with_line_height ($value) {
+    height:                 ($value / 10) + rem;
+    line-height:            ($value / 10) + rem;
+
+    *height:                $value + px;
+    *line-height:           $value + px;
+}
+
+
+@mixin box_sizing ($value: border-box, $width: 100%) {
+    //width:$width;
+    /* *width: expression((this.parentNode.clientWidth - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); */
+
+    -webkit-box-sizing:     $value;
+       -moz-box-sizing:     $value;
+            box-sizing:     $value;
+}
+
+
+@mixin box_shadow ($value...) {
+    -webkit-box-shadow:     $value;
+       -moz-box-shadow:     $value;
+            box-shadow:     $value;
+}
+
+
+@mixin border ($width: $border_width, $style: $border_style, $color: $border_color) {
+    border:                 $width $style $color;
+}
+
+
+@mixin border_radius ($value: $border_radius) {
+    -webkit-border-radius:  $value;
+       -moz-border-radius:  $value;
+            border-radius:  $value;
+}
+
+@mixin user_select ($value: none) {
+    -webkit-user-select: $value;
+       -moz-user-select: $value;
+            user-select: $value;
+}
+
+@mixin fonticon($content: '') {
+    content:$content;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin background ($image, $repeat: $background_repeat, $position: $background_position, $size: $background_size, $attachment: $background_attachment, $color: $background_color) {
+    background:
+                            url("#{$background_url}#{$image}?#{$version}")
+                            #{$repeat}
+                            #{$position} / #{$size}
+                            #{$attachment}
+                            #{$color}
+    ;
+}
+
+
+@mixin background_image ($image) {
+    background-image:       url("#{$background_url}#{$image}?#{$version}");
+}
+
+
+@mixin gradient ($start_color: $navigation_background, $end_color: darken($start_color, 10)) {
+    background:             $start_color; /* Old browsers */
+    /* background:          -moz-linear-gradient(top,  $start_color 0%, $end_color 100%); /* FF3.6+ */
+    /* background:          -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start_color), color-stop(100%,$end_color)); /* Chrome,Safari4+ */
+    background:             -webkit-linear-gradient(top,  $start_color 0%,$end_color 100%); /* Chrome10+,Safari5.1+ */
+    /* background:          -o-linear-gradient(top,  $start_color 0%, $end_color 100%); /* Opera 11.10+ */
+    /* background:          -ms-linear-gradient(top,  $start_color 0%, $end_color 100%); /* IE10+ */
+    background:             linear-gradient(to bottom,  $start_color 0%,$end_color 100%); /* W3C */
+    filter:                 progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start_color}', endColorstr='#{$end_color}',GradientType=0 ); /* IE6-9 */
+}
+
+
+@mixin prefixed_property($property, $value) {
+    -webkit-#{$property}: $value;
+       -moz-#{$property}: $value;
+            #{$property}: $value;
+}

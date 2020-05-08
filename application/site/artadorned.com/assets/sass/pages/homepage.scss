@@ -1,0 +1,83 @@
+/* --------------------------------------------------------------------------------
+		Pages - Homepage: pages/homepage.scss
+----------------------------------------------------------------------------------- */
+
+.home_page_welcome_section {
+    .title {font-family:"Kameron",serif; font-size:40px; margin:0 0 20px;}
+    .description {
+        width:64.666%;
+        margin:0 0 40px;
+        padding:0 0 30px;
+        position:relative;
+        float:left;
+
+        &:before {
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:0;
+            display:block;
+            width:40px;
+            height:5px;
+            background:#000;
+        }
+    }
+
+    .button_more {
+        float:right;
+        color:#000;
+        text-transform:uppercase;
+        font-size:16px;
+
+        [class^="icon-"] {
+            display:inline-block;
+            width:38px;
+            height:38px;
+            background:#000;
+            color:#fff;
+            text-align:center;
+            vertical-align:middle;
+            line-height:38px;
+            margin:0 0 0 20px;
+            @include border_radius(50%);
+        }
+
+        &:hover {
+            color:#a03795;
+            [class^="icon-"] {
+                color:#fff;
+                background:#a03795;
+            }
+        }
+    }
+
+    .buttons {
+        margin: 0 -1%;
+
+        a {
+            @include box_sizing();
+            text-align:center;
+            color:#7d7d7d;
+            font-size:12px;
+            text-transform:uppercase;
+            width:31.333%;
+            margin:0 1%;
+            display:block;
+            float:left;
+            border:4px solid #e3e3e3;
+            background:#e3e3e3;
+
+            span {
+                display:block;
+                border:1px solid #fff;
+                padding:5px;
+            }
+
+            &:hover {
+                background:#000;
+                border-color:#000;
+                color:#fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,186 @@
+/* --------------------------------------------------------------------------------
+		Components - Collections: components/collections.scss
+----------------------------------------------------------------------------------- */
+
+#collection-heading {
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding:40px;
+    margin:0 0 40px;
+
+    .collection_item_details {
+        display:block;
+        background:rgba(255, 255, 255, 0.8);
+
+        padding:20px 30px;
+        color:#272727;
+
+        line-height:1.2;
+        max-width:200px;
+
+        .collection_item_title {
+            display:block;
+            font-size:28px;
+            font-family:'Kameron', sans-serif;
+            font-weight:bold;
+        }
+
+        .collection_item_description {margin:15px 0 0; font-size:16px; display:block;}
+
+        img {display:none;}
+    }
+}
+
+.collections {
+    //display: flex;
+    //flex-wrap:wrap;
+    margin: 0 -1%;
+}
+
+
+.collections_carousel {
+    float:left;
+    position:relative;
+    display:block;
+    width:31.333%;
+    margin: 1%;
+    @include box_sizing();
+
+
+    .collections_carousel_item {
+        display:block;
+        text-align:center;
+        color:#000;
+
+        .collections_carousel_item_image {
+            position:relative;
+            display:block;
+            width:100%;
+            height:0;
+            padding:0 0 100%;
+            overflow:hidden;
+            margin:0 0 30px;
+
+
+            img {
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                max-width:100%;
+                display:block;
+            }
+        }
+        .collections_carousel_item_title {font-weight:bold; font-size:16px; display:block; margin: 0 0 5px; text-transform:uppercase;}
+        .collections_carousel_item_description {font-weight:normal; font-size:14px; display:block; line-height:1;}
+    }
+
+}
+
+.collection_item {
+
+    float:left;
+    position:relative;
+    display:block;
+    width:64.666%;
+
+    margin: 1%;
+    @include box_sizing();
+
+    .collection_item_content {
+        position:relative;
+        display:block;
+        width:100%;
+        height:0;
+        padding-bottom:70%;
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:cover;
+
+        //background:red !important;
+
+        img {display:none;}
+
+        .collection_item_details {
+            display:block;
+            background:rgba(255, 255, 255, 0.8);
+            position:absolute;
+            right:40px;
+            top:40px;
+            padding:20px 30px;
+            color:#272727;
+
+            line-height:1.2;
+            max-width:200px;
+
+            .collection_item_title {
+                display:block;
+                font-size:28px;
+                font-family:'Kameron', sans-serif;
+                font-weight:bold;
+            }
+
+            .collection_item_description {margin:15px 0 0; font-size:16px; display:block;}
+        }
+
+        &:before {
+            content:'';
+            background:rgba(255,255,255,0.5);
+            opacity:0;
+            visibility:hidden;
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            @include transition();
+        }
+
+        &:hover {
+            &:before {
+                opacity:1;
+                visibility:visible;
+            }
+        }
+    }
+
+
+    & + .collection_item + .collection_item {
+        //& + .collection_item  {
+        width:31.333%;
+        .collection_item_content {
+            padding-bottom:144.476%;
+
+            .collection_item_details {
+                left:40px;
+                top:auto;
+                bottom:40px;
+                right:40px;
+            }
+        }
+    }
+
+
+
+}
+
+.collections_listing {
+    .collection_item {
+        width:31.333%;
+        .collection_item_content {
+            padding-bottom:144.476%;
+        }
+
+        &:first-child {
+            width:64.666%;
+            .collection_item_content {
+                padding-bottom:70%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint_medium) {
+
+}

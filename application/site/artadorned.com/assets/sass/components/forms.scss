@@ -1,0 +1,134 @@
+/* --------------------------------------------------------------------------------
+	Forms: forms.scss
+----------------------------------------------------------------------------------- */
+
+/* input fields */
+textarea:focus,
+input:focus,
+select:focus {
+    outline: 0;
+}
+
+label {
+    font-size:13px;
+    font-weight:300;
+    display:block;
+    margin:0 0 5px;
+    text-transform:uppercase;
+    color:#000;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"] {
+    width:100%;
+    min-width:200px;
+    margin:0 0 15px 0;
+    padding:15px 15px;
+    border:1px solid #dfdfdf;
+    font-size:14px;
+    font-weight:normal;
+
+    @include box_sizing();
+
+    &:hover {}
+}
+
+select {
+    margin:0 0 15px 0;
+    padding:15px 15px;
+    border:1px solid #dfdfdf;
+    font-size:14px;
+    font-weight:normal;
+    @include box_sizing();
+
+    &:hover {}
+}
+
+/*\ input fields */
+
+
+.forms_layout_container {
+    .form_container {
+        float:left;
+        width:50%;
+    }
+
+    .signup_container {
+        float:right;
+        width:33%;
+
+
+        .signup_btn {
+            display:block;
+            margin:0 0 20px;
+            padding:30px 100px 30px 30px;
+            position:relative;
+            line-height:1.2;
+            word-wrap:break-word;
+            @include box_sizing();
+
+            strong {
+                display:block;
+                font-size:20px;
+                font-weight:bold;
+            }
+
+            span {
+                display:block;
+                font-size:18px;
+                font-weight:300;
+            }
+
+            .arrow {
+                display:block;
+                width:40px;
+                height:40px;
+                text-align:center;
+                line-height:40px;
+                font-size:20px;
+                position:absolute;
+                right:30px;
+                top:50%;
+                margin:-20px 0 0 0;
+                @include border_radius(50%);
+            }
+
+            &.signup {
+                border:1px solid #000;
+                color:#000;
+
+                .arrow {background:#333333; color:#fff;}
+            }
+
+            &.facebook {
+                background:#47639e;
+                color:#fff;
+                padding-left:70px;
+
+                .icon {
+                    position:absolute;
+                    left:30px;
+                    top:50%;
+                    margin:-20px 0 0;
+                    height:40px;
+                    line-height:40px;
+                    font-size:30px;
+                }
+                .arrow {background:#fff; color:#47639e;}
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    .login-content {
+        form {float:none; width:100%; border:none; padding:0; margin:0;}
+        .social-container {float:none; width:100%; border:none; padding:0; margin:0 0 30px; }
+    }
+
+}

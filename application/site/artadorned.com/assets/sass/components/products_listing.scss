@@ -1,0 +1,194 @@
+/* --------------------------------------------------------------------------------
+		Components - Products listing: components/products_listing.scss
+----------------------------------------------------------------------------------- */
+
+.products_listing {
+    margin:0 -1%;
+}
+.product-item {
+    width:23%;
+    margin:0 1% 1%;
+    display:block;
+    float:left;
+    color:#000;
+
+    @include transition();
+
+    .product-item-image {
+        position:relative;
+        display:block;
+        width:100%;
+        padding:0 0 133%;
+        overflow:hidden;
+        border:1px solid #dfdfdf;
+        margin:0 0 15px;
+        background:#fff;
+        @include box_sizing();
+
+        img {display:block; width:100%; max-width:100%; position:absolute; left:0; top:0; @include transition();}
+    }
+
+    .product-item-title {
+        display:block;
+        font-weight:300;
+        font-size:14px;
+        line-height:1;
+        height:2em;
+        overflow:hidden;
+        text-transform:uppercase;
+    }
+
+    .product-item-price {
+        margin:5px 0 0;
+        display:block;
+        font-weight:bold;
+        font-size:16px;
+    }
+
+    &:hover {
+        //color:#a03795;
+        color:#444;
+        .product-item-image {
+            //img {@include transform(scale(1.05)); opacity:0.8;}
+        }
+    }
+
+}
+
+
+.listing_container {
+    margin:0 -1%;
+}
+
+
+
+#filters {
+    float:left;
+    width:23%;
+    margin:0 1%;
+
+    .filters_title {
+        border-top:1px solid #dfdfdf;
+        border-bottom:1px solid #dfdfdf;
+        height:40px;
+        line-height:40px;
+        font-size:18px;
+        font-weight:300;
+        text-transform:uppercase;
+    }
+
+    ul {
+        margin:0 0 50px;
+        padding:0;
+        list-style:none;
+
+
+
+        li {}
+        a {
+            font-weight:bold;
+            color:#000;
+            font-size:14px;
+            &.selected {color:#a03795;}
+        }
+    }
+
+    .refinement_filters {
+        .filters_title {margin:0; border-bottom:none;}
+        .clear_filters {position:absolute; padding:10px; top:0; right:0px; font-size:12px; font-weight:300; color:#000; text-transform:none;}
+        ul {
+            margin:0;
+
+            li + li {margin-top:15px}
+
+            a {
+                position:relative;
+                padding-left:35px;
+                display:block;
+                &:before {
+                    @include fonticon();
+                    position:absolute;
+                    left:10px;
+                    top:0;
+                    width:16px;
+                    height:16px;
+                    line-height:16px;
+                    text-align:center;
+                    border:1px solid #c8c8c8;
+
+                }
+
+                &.selected {
+                    color:#a03795;
+                    &:before {
+                        content:$icon-cross;
+                        border-color:#a03795;
+                    }
+                }
+            }
+        }
+        .toggle-container {
+            border-color:#dfdfdf;
+
+            .toggle-handle {
+                padding-left:30px;
+
+                &:before {
+                    left:10px;
+                    right:auto;
+                    content:$icon-chevron-thin-right;
+                }
+            }
+
+            &.active {
+                .toggle-handle {
+                    &:before {
+                        content:$icon-chevron-thin-down;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#listing {
+    float:left;
+    width:73%;
+    margin:0 1%;
+}
+
+#listing-grid .product-item {
+    width:31.3333%;
+}
+
+
+#listing-options {
+    border-top:1px solid #dfdfdf;
+    border-bottom:1px solid #dfdfdf;
+    margin:0 0 40px;
+    font-size:14px;
+    height:40px;
+    line-height:40px;
+    font-weight:300;
+    color:#000;
+
+    a {
+        color:#000;
+        margin:0 0 0 10px;
+    }
+
+    .selected {
+        font-weight:bold;
+    }
+
+    #options-pagesize {
+        float:left;
+        span {text-transform:uppercase;}
+    }
+    #options-sort {float:right;}
+}
+
+
+@media only screen and (max-width: $breakpoint_medium) {
+
+}

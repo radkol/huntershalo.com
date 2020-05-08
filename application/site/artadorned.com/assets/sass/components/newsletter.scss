@@ -1,0 +1,85 @@
+/* --------------------------------------------------------------------------------
+		Components - Newsletter: components/newsletter.scss
+----------------------------------------------------------------------------------- */
+
+#newsletter {
+    background:#fbfbfb;
+    border-top:1px solid #efefef;
+    border-bottom:1px solid #efefef;
+
+    .newsletter_container {padding:30px 0;}
+
+    form {
+        float:left;
+        width:65.66%;
+
+        .form_elements { float:right;}
+
+        label {
+            display:inline-block;
+            float:left;
+            font-weight:bold;
+            font-size:16px;
+            height:40px;
+            line-height:40px;
+            text-transform:none;
+            margin: 0 30px 0 0;
+            color:#191616;
+        }
+        input {
+            width:230px;
+            margin:0;
+            height:40px;
+            padding:0 15px;
+            font-size:12px;
+            float:left;
+        }
+
+        button {
+            height:40px;
+            @include box_sizing();
+            border:1px solid #000;
+            font-weight:bold;
+            font-size:14px;
+            padding:0 30px;
+            float:left;
+            text-transform:uppercase;
+            background:none;
+            margin:0 0 0 20px;
+            @include transition();
+
+            &:hover {
+                background:#000;
+                color:#fff;
+            }
+        }
+    }
+
+    .social_buttons {
+        float:right;
+
+
+        a {
+            float:left;
+            display:inline-block;
+            width:40px;
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            margin:0 0 0 10px;
+            background:#000;
+            color:#fff;
+            font-size:20px;
+            span {display: none;}
+
+            &:hover {
+                background:#a03795;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: $breakpoint_medium) {
+
+}

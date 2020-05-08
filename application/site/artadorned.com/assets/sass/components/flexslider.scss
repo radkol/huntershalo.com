@@ -1,0 +1,193 @@
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.flexslider {
+    //overflow:hidden;
+    position: relative;
+
+    .slides {
+        > li {
+            display: none;
+            -webkit-backface-visibility: hidden;
+        }
+
+        img{
+            width: 100%;
+            height:auto;
+            display: block;
+        }
+
+        @extend .clearfix;
+
+        .no-js &{
+            > li{
+                &:first-child{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+.flex-viewport {
+    max-height: 1000px;
+    @include transition();
+    .loading & {max-height: 1000px;}
+}
+
+.carousel li {margin-right: 5px;}
+
+
+.flex-direction-nav {
+    a  {
+        display: block;
+        width: 40px;
+        height: 80px;
+        margin: -20px 0 0;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        overflow: hidden;
+        opacity: 0;
+        cursor: pointer;
+        color: #000;
+
+        @include transition();
+
+        &:before  {
+            //font-family: "@{font-name}";
+            font-size: 40px;
+            display: inline-block;
+            //content: @flex-direction-nav-icon-prev;
+            content: "\e908";
+
+            font-family: 'icomoon';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 80px;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        &.flex-next:before {
+            //content: @flex-direction-nav-icon-next;
+            content: "\e909";
+        }
+    }
+
+    .flex-prev {left: 0px; padding-right: 20px;}
+    .flex-next {right:0px; text-align: right; padding-left: 20px;}
+
+    .flexslider:hover &{
+
+        .flex-prev {
+            opacity: 0.4;
+            left: 20px;
+            &:hover{opacity: 1;}
+        }
+
+        .flex-next {
+            opacity: 0.4;
+            right: 20px;
+            &:hover{opacity: 1;}
+        }
+    }
+
+    .flex-disabled {
+        opacity: 0!important;
+        filter: alpha(opacity=0);
+        cursor: default;
+    }
+}
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    li {margin: 0 6px; display: inline-block;}
+}
+
+.flex-control-paging li {
+    a {
+        width: 11px;
+        height: 11px;
+        display: block;
+        background: #666;
+        background: rgba(0,0,0,0.5);
+        cursor: pointer;
+        text-indent: -9999px;
+        &:hover {background: rgba(0,0,0,0.7);}
+        &.flex-active {background: rgba( 0, 0, 0, 0.9 ); cursor: default;}
+    }
+}
+
+
+
+.flexslider .content_container {position:relative;}
+.slide_content {
+    position:absolute;
+    background:rgba(255,255,255,0.8);
+    padding:30px;
+    top:40px;
+    width:33.33%;
+
+    .slide_title {
+        font-family: 'Kameron', serif;
+        position:relative;
+        font-weight:bold;
+        font-size:30px;
+        line-height:1.2;
+        padding:0 0 10px;
+        margin:0 0 40px;
+        &:after {
+            content:'';
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:40px;
+            border-bottom:5px solid #000;
+        }
+    }
+
+    .slide_description {
+        font-size:12px;
+        font-weight:300;
+        line-height:1.2;
+        margin:0 0 40px;
+    }
+
+    .slide_btn {
+        display:block;
+        border:1px solid #000;
+        text-transform:uppercase;
+        text-align:center;
+        padding:5px 10px;
+        color:#272727;
+
+        &:hover {
+            background:#000;
+            color:#fff;
+        }
+    }
+}
+
+@media screen and ( max-width: $breakpoint_medium ) {
+    .flex-direction-nav {
+        .flex-prev {opacity: 1; left: 10px;}
+        .flex-next {opacity: 1; right: 10px;}
+    }
+}

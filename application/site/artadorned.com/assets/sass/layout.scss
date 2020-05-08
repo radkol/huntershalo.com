@@ -1,0 +1,32 @@
+/* --------------------------------------------------------------------------------
+	Layout: layout.scss
+----------------------------------------------------------------------------------- */
+
+/* layout */
+.clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+#layout_container {
+    display:table;
+    width:100%;
+    height:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+
+#page_container {display:table-row; height:auto;}
+
+.content_container {margin:0 auto; max-width:$content_max_width; padding:0 $content_padding;}
+
+.page_section {padding:$section_padding 0;}
+/*\ layout */
+
+
+@media only screen and (max-width: $breakpoint_medium) {
+    #layout_container {position:relative;}
+}

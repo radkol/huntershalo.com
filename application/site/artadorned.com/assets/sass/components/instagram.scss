@@ -1,0 +1,23 @@
+/* --------------------------------------------------------------------------------
+		Components - Instagram Container: components/instagram.scss
+----------------------------------------------------------------------------------- */
+
+#instagram_container {
+    background:#fff;
+    color:#000;
+    h3 {
+        [class^="icon-"] {font-size:28px; margin:0 5px 0 0; vertical-align:middle; position:relative; top:-2px;}
+        text-align:center;
+    }
+    section {display:table; table-layout:fixed; width:100%;}
+    a {display:table-cell;}
+    img {display:block; width:auto;}
+}
+
+@media only screen and (max-width: $breakpoint_medium) {
+    #instagram_container {
+        overflow:hidden;
+        section {table-layout:auto;}
+        img {width:120px;}
+    }
+}

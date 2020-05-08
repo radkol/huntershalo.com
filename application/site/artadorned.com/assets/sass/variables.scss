@@ -1,0 +1,66 @@
+//--------------------------------------------------------------------------------
+//	Variables: variables.scss
+//--------------------------------------------------------------------------------
+
+$version:                   "v1.0.0";
+
+// fonts                    --------------------------------------------------
+$font_size:                 16px;
+$font_family:               'Roboto', Helvetica, Arial, Geneva, sans-serif;
+$font_weight:               normal;
+$line_height:               1.6;
+
+
+
+// colors                   --------------------------------------------------
+$branding_color:            #0099CC;
+$main_color:                #272727;
+$secondary_color:           #666;
+
+$link_color:                #0099CC;
+$link_hover_color:          darken($link_color, 10);
+
+$success_color:             #ff3c3c;
+$warning_color:             #f8981d;
+$error_color:               #ff3c3c;
+
+
+
+// background images        --------------------------------------------------
+$background_repeat:         no-repeat;
+$background_position:       0 0;
+$background_size:           auto;
+$background_attachment:     scroll;
+$background_color:          transparent;
+$background_url:            "../images/";
+
+
+
+// layout                   --------------------------------------------------
+$page_background_color:     #fff;
+
+$layout_min_width:          300px;
+
+$content_max_width:         1024px;
+$content_padding:           20px;
+$section_padding:           40px;
+
+$sidebar_width:             280px;
+
+
+
+// borders                  --------------------------------------------------
+$border_main_color:         #d7d8d9;
+$border_secondary_color:    #eee;
+$border_outline_color:      #fff;
+$border_section_color:      #ccc;
+$border_width:              1px;
+$border_style:              solid;
+$border_radius:             3px;
+
+
+
+// media queries            --------------------------------------------------
+$breakpoint_large:          1600px;
+$breakpoint_medium:         1024px;
+$breakpoint_small:          667px;
